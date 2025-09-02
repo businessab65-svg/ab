@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Your F1 Visa Status - view-immigration-status.gov.us</title>
+    <title>View Your Student Visa Status - view-immigration-status.gov.uk</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -26,9 +26,9 @@
         }
         
         .header {
-            background: linear-gradient(to right, #002868, #00308a);
+            background: linear-gradient(to right, #012169, #003078);
             padding: 15px 0;
-            border-bottom: 4px solid #bf0a30;
+            border-bottom: 4px solid #c8102e;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             width: 100%;
         }
@@ -42,7 +42,7 @@
             align-items: center;
         }
         
-        .us-gov-logo {
+        .uk-gov-logo {
             display: flex;
             align-items: center;
             gap: 15px;
@@ -52,12 +52,12 @@
             width: 40px;
             height: 40px;
             background: white;
-            border-radius: 50%;
+            border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            box-shadow: 0 0 0 2px #002868;
+            box-shadow: 0 0 0 2px #012169;
         }
         
         .official-logo::before {
@@ -65,12 +65,12 @@
             position: absolute;
             width: 30px;
             height: 30px;
-            background: #002868;
-            border-radius: 50%;
+            background: #012169;
+            border-radius: 3px;
         }
         
         .official-logo::after {
-            content: "★";
+            content: "♔";
             position: absolute;
             color: white;
             font-size: 16px;
@@ -103,7 +103,7 @@
         }
         
         .login-btn {
-            background-color: #0072bc;
+            background-color: #00703c;
             color: white;
             padding: 6px 12px;
             border-radius: 4px;
@@ -114,7 +114,7 @@
         }
         
         .login-btn:hover {
-            background-color: #005a9e;
+            background-color: #005530;
         }
         
         .beta-banner {
@@ -126,7 +126,7 @@
         }
         
         .beta-tag {
-            background-color: #bf0a30;
+            background-color: #c8102e;
             color: white;
             font-weight: bold;
             padding: 2px 6px;
@@ -139,7 +139,7 @@
             width: 100%;
             margin: 0 auto;
             padding: 15px;
-            max-width: 414px; /* iPhone XR width */
+            max-width: 414px;
         }
         
         .main-content {
@@ -155,13 +155,13 @@
             border-radius: 8px;
             padding: 20px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border-top: 5px solid #0072bc;
+            border-top: 5px solid #00703c;
         }
         
         .status-header {
             font-size: 20px;
             margin-bottom: 15px;
-            color: #002868;
+            color: #012169;
             padding-bottom: 8px;
             border-bottom: 2px solid #e6e6e6;
             display: flex;
@@ -179,7 +179,7 @@
             width: 80px;
             height: 80px;
             border-radius: 5px;
-            border: 2px solid #002868;
+            border: 2px solid #012169;
             object-fit: cover;
             background: #f0f0f0;
             display: flex;
@@ -219,7 +219,7 @@
         .info-value {
             display: block;
             font-size: 16px;
-            color: #002868;
+            color: #012169;
         }
         
         .validity-container {
@@ -249,7 +249,7 @@
         .validity-date {
             font-size: 18px;
             font-weight: bold;
-            color: #002868;
+            color: #012169;
         }
         
         .share-code-section {
@@ -262,7 +262,7 @@
         }
         
         .button {
-            background: linear-gradient(to bottom, #0072bc, #005a9e);
+            background: linear-gradient(to bottom, #00703c, #005530);
             color: white;
             padding: 10px 20px;
             text-decoration: none;
@@ -280,7 +280,7 @@
         }
         
         .button:hover {
-            background: linear-gradient(to bottom, #005a9e, #004880);
+            background: linear-gradient(to bottom, #005530, #004025);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             transform: translateY(-2px);
         }
@@ -305,7 +305,7 @@
         .section-title {
             font-size: 18px;
             margin-bottom: 15px;
-            color: #002868;
+            color: #012169;
             padding-bottom: 8px;
             border-bottom: 2px solid #e6e6e6;
         }
@@ -317,7 +317,7 @@
         .subsection-title {
             font-size: 16px;
             margin-bottom: 8px;
-            color: #00308a;
+            color: #003078;
         }
         
         ul, ol {
@@ -332,11 +332,11 @@
         }
         
         .footer {
-            background: linear-gradient(to right, #002868, #00308a);
+            background: linear-gradient(to right, #012169, #003078);
             color: white;
             padding: 30px 0;
             margin-top: 30px;
-            border-top: 4px solid #bf0a30;
+            border-top: 4px solid #c8102e;
             width: 100%;
         }
         
@@ -397,7 +397,7 @@
         .tabs {
             display: flex;
             flex-wrap: wrap;
-            border-bottom: 2px solid #0072bc;
+            border-bottom: 2px solid #00703c;
             margin-bottom: 15px;
         }
         
@@ -415,7 +415,7 @@
         }
         
         .tab.active {
-            background-color: #0072bc;
+            background-color: #00703c;
             color: white;
             font-weight: bold;
         }
@@ -502,11 +502,11 @@
 <body>
     <header class="header">
         <div class="header-container">
-            <div class="us-gov-logo">
+            <div class="uk-gov-logo">
                 <div class="official-logo"></div>
                 <div class="logo-text">
-                    <div class="logo-top">U.S. Government</div>
-                    <div class="logo-bottom">Homeland Security</div>
+                    <div class="logo-top">UK Government</div>
+                    <div class="logo-bottom">Home Office</div>
                 </div>
             </div>
             <a href="#" class="login-btn"><i class="fas fa-unlock"></i> Logout</a>
@@ -516,13 +516,13 @@
     <div class="container">
         <div class="alert-banner">
             <i class="fas fa-exclamation-circle alert-icon"></i>
-            <div style="font-size: 14px;">Before you travel: Make sure your passport is added to your account to avoid delays or denied boarding.</div>
+            <div style="font-size: 14px;">Before you travel: Ensure your BRP card is valid and your passport is up to date to avoid delays or denied entry.</div>
         </div>
         
         <div class="main-content">
             <div class="status-card">
                 <h2 class="status-header">
-                    <span>Your immigration status (eVisa)</span>
+                    <span>Your immigration status (Student visa)</span>
                     <img src="https://i.ibb.co/BV6dsFhV/Whats-App-Image-2025-09-02-at-4-53-51-PM.jpg" alt="Profile Photo" class="profile-picture">
                 </h2>
                 
@@ -547,32 +547,32 @@
                     </div>
                     <div class="info-item">
                         <span class="info-label">Visa Type</span>
-                        <span class="info-value">F1 Student</span>
+                        <span class="info-value">Student visa (Tier 4)</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">SEVIS ID</span>
-                        <span class="info-value">N375389724</span>
+                        <span class="info-label">CAS Number</span>
+                        <span class="info-value">GLW240598732</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">School</span>
-                        <span class="info-value">Warrington College of Business, Florida</span>
+                        <span class="info-label">University</span>
+                        <span class="info-value">University of Glasgow, Scotland</span>
                     </div>
                 </div>
                 
                 <div class="validity-container">
                     <div class="validity-box">
                         <span class="validity-label">Valid from</span>
-                        <span class="validity-date">May 15, 2025</span>
+                        <span class="validity-date">Sep 15, 2024</span>
                     </div>
                     <div class="validity-box">
                         <span class="validity-label">Valid until</span>
-                        <span class="validity-date">May 15, 2028</span>
+                        <span class="validity-date">Oct 31, 2026</span>
                     </div>
                 </div>
                 
                 <div class="share-code-section">
                     <h3 style="margin-bottom: 10px;">Prove Your Status</h3>
-                    <p style="font-size: 14px; margin-bottom: 10px;">Share your visa status with employers, schools, or others using a secure share code.</p>
+                    <p style="font-size: 14px; margin-bottom: 10px;">Share your visa status with employers, universities, or others using a secure share code.</p>
                     <a href="#" class="button"><i class="fas fa-share-square"></i> Get a Share Code</a>
                 </div>
             </div>
@@ -580,11 +580,11 @@
             <div class="status-card">
                 <h2 class="status-header">Quick Actions</h2>
                 <div class="seal">
-                    <i class="fas fa-shield-alt" style="font-size: 50px; color: #002868;"></i>
+                    <i class="fas fa-shield-alt" style="font-size: 50px; color: #012169;"></i>
                 </div>
                 <div style="margin: 15px 0;">
                     <a href="#" class="button" style="margin: 8px 0;">
-                        <i class="fas fa-file-alt"></i> View I-20
+                        <i class="fas fa-file-alt"></i> View CAS Statement
                     </a>
                     <a href="#" class="button button-secondary" style="margin: 8px 0;">
                         <i class="fas fa-sync-alt"></i> Update Details
@@ -595,8 +595,8 @@
                 </div>
                 
                 <div class="alert-banner" style="margin-top: 15px;">
-                    <i class="fas fa-info-circle alert-icon" style="color: #0072bc;"></i>
-                    <div style="font-size: 14px;">Keep your personal information up to date to maintain your visa status.</div>
+                    <i class="fas fa-info-circle alert-icon" style="color: #00703c;"></i>
+                    <div style="font-size: 14px;">Keep your personal information up to date to maintain your visa status and comply with Home Office requirements.</div>
                 </div>
             </div>
         </div>
@@ -611,31 +611,34 @@
             
             <div id="rights" class="tab-content active">
                 <div class="content-section">
-                    <h2 class="section-title">What You Can Do on an F1 Visa</h2>
+                    <h2 class="section-title">What You Can Do on a Student Visa</h2>
                     <ul>
-                        <li>Live in the U.S. while pursuing a full-time academic program</li>
-                        <li>Work on-campus up to 20 hours per week during academic terms</li>
-                        <li>Work full-time during official school breaks and summer vacation</li>
-                        <li>Participate in Curricular Practical Training (CPT) related to your field of study</li>
-                        <li>Apply for Optional Practical Training (OPT) after completing your studies</li>
-                        <li>Transfer to another SEVP-approved school</li>
-                        <li>Travel in and out of the U.S. with proper documentation</li>
-                        <li>Obtain a driver's license in your state of residence (varies by state)</li>
+                        <li>Study at the University of Glasgow for your approved course</li>
+                        <li>Work up to 20 hours per week during term time</li>
+                        <li>Work full-time during official university holidays</li>
+                        <li>Take unpaid work experience as part of your course</li>
+                        <li>Do voluntary work for a registered charity</li>
+                        <li>Travel in and out of the UK with proper documentation</li>
+                        <li>Switch to a different course at the same or higher level</li>
+                        <li>Apply for a Graduate visa after completing your studies</li>
+                        <li>Open a UK bank account with your university support</li>
+                        <li>Register with the NHS for healthcare services</li>
                     </ul>
                 </div>
             </div>
             
             <div id="restrictions" class="tab-content">
                 <div class="content-section">
-                    <h2 class="section-title">F1 Visa Restrictions</h2>
+                    <h2 class="section-title">Student Visa Restrictions</h2>
                     <ul>
-                        <li>Cannot work off-campus without authorization</li>
-                        <li>Cannot participate in unauthorized employment</li>
-                        <li>Must maintain a full course of study each academic term</li>
-                        <li>Cannot receive federal public assistance</li>
-                        <li>Must maintain a valid passport from your home country</li>
-                        <li>Must depart the U.S. within 60 days of program completion (unless transferring or changing status)</li>
-                        <li>Cannot study at public elementary schools or adult education programs</li>
+                        <li>Cannot work more than 20 hours per week during term time</li>
+                        <li>Cannot be self-employed or start a business</li>
+                        <li>Cannot work as a professional sportsperson or entertainer</li>
+                        <li>Cannot claim public funds or benefits</li>
+                        <li>Cannot study at a different institution without permission</li>
+                        <li>Must maintain attendance and academic progress</li>
+                        <li>Cannot marry or enter civil partnership as a visitor</li>
+                        <li>Must leave the UK when your visa expires (unless extending or switching)</li>
                     </ul>
                 </div>
             </div>
@@ -643,21 +646,21 @@
             <div id="employment" class="tab-content">
                 <div class="content-section">
                     <h2 class="section-title">Employment Information</h2>
-                    <p style="margin-bottom: 15px; font-size: 14px;">As an F1 student, you are limited in the types of employment you may engage in:</p>
+                    <p style="margin-bottom: 15px; font-size: 14px;">As a Student visa holder, you have limited work rights in the UK:</p>
                     
                     <div class="subsection">
-                        <h3 class="subsection-title">On-Campus Employment</h3>
-                        <p style="font-size: 14px;">You may work up to 20 hours per week while school is in session and full-time during breaks.</p>
+                        <h3 class="subsection-title">Part-time Work</h3>
+                        <p style="font-size: 14px;">You may work up to 20 hours per week during term time and full-time during official university holidays.</p>
                     </div>
                     
                     <div class="subsection">
-                        <h3 class="subsection-title">Curricular Practical Training (CPT)</h3>
-                        <p style="font-size: 14px;">CPT must be an integral part of your established curriculum and directly related to your major field of study.</p>
+                        <h3 class="subsection-title">Work Placement</h3>
+                        <p style="font-size: 14px;">Work placements as part of your course are allowed and don't count towards your 20-hour limit if they're less than 50% of your total study time.</p>
                     </div>
                     
                     <div class="subsection">
-                        <h3 class="subsection-title">Optional Practical Training (OPT)</h3>
-                        <p style="font-size: 14px;">You may apply for up to 12 months of OPT authorization upon completion of your academic program.</p>
+                        <h3 class="subsection-title">Graduate Route</h3>
+                        <p style="font-size: 14px;">After completing your degree, you may be eligible for a Graduate visa allowing you to work in the UK for 2 years (3 years for PhD graduates).</p>
                     </div>
                 </div>
             </div>
@@ -665,18 +668,19 @@
             <div id="travel" class="tab-content">
                 <div class="content-section">
                     <h2 class="section-title">Travel Information</h2>
-                    <p style="margin-bottom: 15px; font-size: 14px;">When traveling outside the U.S., you will need the following documents to re-enter:</p>
+                    <p style="margin-bottom: 15px; font-size: 14px;">When traveling outside the UK, you will need the following documents to re-enter:</p>
                     <ul>
-                        <li>A valid passport (valid for at least 6 months beyond your date of entry)</li>
-                        <li>A valid F1 visa stamp (unless traveling to Canada, Mexico, or adjacent islands for less than 30 days)</li>
-                        <li>A valid Form I-20 with a travel endorsement from your DSO (less than 1 year old)</li>
-                        <li>Financial evidence showing proof of necessary funds</li>
-                        <li>Your most recent transcript and proof of enrollment</li>
+                        <li>A valid passport (valid for the duration of your stay)</li>
+                        <li>Your valid BRP card (Biometric Residence Permit)</li>
+                        <li>Current CAS statement or university enrollment letter</li>
+                        <li>Evidence of financial support if requested</li>
+                        <li>Academic transcripts showing your progress</li>
+                        <li>Accommodation details in the UK</li>
                     </ul>
                     
                     <div class="alert-banner">
                         <i class="fas fa-exclamation-triangle alert-icon"></i>
-                        <div style="font-size: 14px;">If your visa has expired, you will need to renew it at a U.S. embassy or consulate before returning to the U.S.</div>
+                        <div style="font-size: 14px;">If your BRP card is lost, stolen, or damaged while abroad, contact the UK embassy or consulate immediately.</div>
                     </div>
                 </div>
             </div>
@@ -684,20 +688,26 @@
         
         <div class="content-section">
             <h2 class="section-title">Maintaining Your Status</h2>
-            <p style="margin-bottom: 15px; font-size: 14px;">To maintain your F1 status, you must:</p>
+            <p style="margin-bottom: 15px; font-size: 14px;">To maintain your Student visa status, you must:</p>
             <ul>
-                <li>Attend the school you are authorized to attend</li>
-                <li>Maintain a full course of study each academic term</li>
-                <li>Make normal progress toward completing your course of study</li>
-                <li>Keep your passport valid at all times</li>
-                <li>Follow proper procedures for transferring, extending, or changing your education level</li>
-                <li>Limit on-campus employment to 20 hours per week while school is in session</li>
-                <li>Update your residential address within 10 days of moving</li>
+                <li>Study at the University of Glasgow as authorized</li>
+                <li>Attend classes regularly and make satisfactory academic progress</li>
+                <li>Keep your passport and BRP card valid at all times</li>
+                <li>Inform the university of any changes to your personal details</li>
+                <li>Not exceed your work hour limitations</li>
+                <li>Report to police if required (certain nationalities)</li>
+                <li>Extend your visa before it expires if continuing studies</li>
+                <li>Maintain adequate funds for your studies and living costs</li>
             </ul>
             
             <div class="subsection">
-                <h3 class="subsection-title">Social Security Number</h3>
-                <p style="font-size: 14px;">If you plan to work in the U.S., you will need a Social Security Number (SSN). You can apply for an SSN at a Social Security Administration office after securing employment.</p>
+                <h3 class="subsection-title">National Insurance Number</h3>
+                <p style="font-size: 14px;">If you plan to work in the UK, you will need a National Insurance Number (NINo). You can apply online or by phone once you start working.</p>
+            </div>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">NHS Healthcare</h3>
+                <p style="font-size: 14px;">Register with a local GP practice near your university accommodation. You may be entitled to free NHS healthcare as a student visa holder.</p>
             </div>
         </div>
     </div>
@@ -709,12 +719,12 @@
                 <a href="#" class="footer-link">Terms of Use</a>
                 <a href="#" class="footer-link">Accessibility</a>
                 <a href="#" class="footer-link">Contact Us</a>
-                <a href="#" class="footer-link">Help Center</a>
+                <a href="#" class="footer-link">Help Centre</a>
                 <a href="#" class="footer-link">Site Map</a>
             </div>
             <div class="footer-disclaimer">
-                <p>This site is managed by the U.S. Department of Homeland Security.</p>
-                <p>All content is available under the Open Government License v3.0, except where otherwise stated.</p>
+                <p>This site is managed by the UK Home Office.</p>
+                <p>All content is available under the Open Government Licence v3.0, except where otherwise stated.</p>
             </div>
         </div>
     </footer>
@@ -749,8 +759,8 @@
                     
                     if (buttonText.includes('Get a Share Code')) {
                         alert('Share code functionality would generate a unique code to share your status.');
-                    } else if (buttonText.includes('View I-20')) {
-                        alert('This would display your I-20 document.');
+                    } else if (buttonText.includes('View CAS Statement')) {
+                        alert('This would display your CAS (Confirmation of Acceptance for Studies) document.');
                     } else if (buttonText.includes('Update Details')) {
                         alert('This would open a form to update your personal information.');
                     } else if (buttonText.includes('Print Status')) {
