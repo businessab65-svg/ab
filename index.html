@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Your F1 Visa Status - view-immigration-status.gov.us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(to bottom, #f0f5ff, #e6f0ff);
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #002868, #00308a);
+            padding: 15px 0;
+            border-bottom: 4px solid #bf0a30;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+        }
+        
+        .header-container {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .us-gov-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .official-logo {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 0 0 2px #002868;
+        }
+        
+        .official-logo::before {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: #002868;
+            border-radius: 50%;
+        }
+        
+        .official-logo::after {
+            content: "★";
+            position: absolute;
+            color: white;
+            font-size: 16px;
+            z-index: 1;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-top {
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 1;
+        }
+        
+        .logo-bottom {
+            color: white;
+            font-size: 14px;
+            line-height: 1;
+        }
+        
+        .gov-title {
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        
+        .login-btn {
+            background-color: #0072bc;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            font-size: 14px;
+        }
+        
+        .login-btn:hover {
+            background-color: #005a9e;
+        }
+        
+        .beta-banner {
+            background-color: #f8e5e5;
+            padding: 8px 0;
+            border-bottom: 1px solid #d0a0a0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .beta-tag {
+            background-color: #bf0a30;
+            color: white;
+            font-weight: bold;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-right: 8px;
+            font-size: 12px;
+        }
+        
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 15px;
+            max-width: 414px; /* iPhone XR width */
+        }
+        
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .status-card {
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-top: 5px solid #0072bc;
+        }
+        
+        .status-header {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #002868;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e6e6e6;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        }
+        
+        .status-header span {
+            flex: 1;
+            margin-right: 15px;
+        }
+        
+        .profile-picture {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            border: 2px solid #002868;
+            object-fit: cover;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .info-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        
+        .info-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .info-value {
+            display: block;
+            font-size: 16px;
+            color: #002868;
+        }
+        
+        .validity-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .validity-box {
+            width: 100%;
+            border: 1px solid #d0d0d0;
+            border-radius: 6px;
+            padding: 15px;
+            background: linear-gradient(to bottom, #f7f9fc, #edf2f8);
+            text-align: center;
+        }
+        
+        .validity-label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 4px;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .validity-date {
+            font-size: 18px;
+            font-weight: bold;
+            color: #002868;
+        }
+        
+        .share-code-section {
+            background: linear-gradient(to right, #e6f7ff, #f0faff);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            border: 1px solid #cce5ff;
+        }
+        
+        .button {
+            background: linear-gradient(to bottom, #0072bc, #005a9e);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            display: inline-block;
+            margin-top: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            font-size: 14px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .button:hover {
+            background: linear-gradient(to bottom, #005a9e, #004880);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .button-secondary {
+            background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+            color: #333;
+        }
+        
+        .button-secondary:hover {
+            background: linear-gradient(to bottom, #e0e0e0, #d0d0d0);
+        }
+        
+        .content-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #002868;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e6e6e6;
+        }
+        
+        .subsection {
+            margin-bottom: 20px;
+        }
+        
+        .subsection-title {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #00308a;
+        }
+        
+        ul, ol {
+            margin-left: 20px;
+            margin-bottom: 12px;
+        }
+        
+        li {
+            margin-bottom: 6px;
+            line-height: 1.5;
+            font-size: 14px;
+        }
+        
+        .footer {
+            background: linear-gradient(to right, #002868, #00308a);
+            color: white;
+            padding: 30px 0;
+            margin-top: 30px;
+            border-top: 4px solid #bf0a30;
+            width: 100%;
+        }
+        
+        .footer-container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 15px;
+            max-width: 414px;
+        }
+        
+        .footer-links {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-link {
+            color: #a0c5ff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 12px;
+        }
+        
+        .footer-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .footer-disclaimer {
+            font-size: 12px;
+            color: #c0d5ff;
+            margin-top: 15px;
+            border-top: 1px solid #304878;
+            padding-top: 15px;
+        }
+        
+        .alert-banner {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .alert-icon {
+            color: #856404;
+            font-size: 20px;
+            margin-right: 12px;
+        }
+        
+        .tab-container {
+            margin: 20px 0;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #0072bc;
+            margin-bottom: 15px;
+        }
+        
+        .tab {
+            padding: 10px 15px;
+            background-color: #f0f5ff;
+            border: 1px solid #d0d0d0;
+            border-bottom: none;
+            border-radius: 6px 6px 0 0;
+            margin-right: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .tab.active {
+            background-color: #0072bc;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .seal {
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .seal img {
+            width: 60px;
+            height: 60px;
+            opacity: 0.8;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        
+        .profile-info {
+            flex: 1;
+        }
+        
+        /* Media queries for very small devices */
+        @media (max-width: 320px) {
+            .gov-title {
+                font-size: 14px;
+            }
+            
+            .official-logo {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .official-logo::before {
+                width: 25px;
+                height: 25px;
+            }
+            
+            .logo-top {
+                font-size: 14px;
+            }
+            
+            .logo-bottom {
+                font-size: 12px;
+            }
+            
+            .profile-picture {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .status-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+        
+        /* Prevent horizontal scrolling */
+        html, body {
+            overflow-x: hidden;
+        }
+        
+        /* Ensure all elements stay within viewport */
+        img, div, section, header, footer {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="us-gov-logo">
+                <div class="official-logo"></div>
+                <div class="logo-text">
+                    <div class="logo-top">U.S. Government</div>
+                    <div class="logo-bottom">Homeland Security</div>
+                </div>
+            </div>
+            <a href="#" class="login-btn"><i class="fas fa-unlock"></i> Logout</a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="alert-banner">
+            <i class="fas fa-exclamation-circle alert-icon"></i>
+            <div style="font-size: 14px;">Before you travel: Make sure your passport is added to your account to avoid delays or denied boarding.</div>
+        </div>
+        
+        <div class="main-content">
+            <div class="status-card">
+                <h2 class="status-header">
+                    <span>Your immigration status (eVisa)</span>
+                    <img src="https://i.ibb.co/BV6dsFhV/Whats-App-Image-2025-09-02-at-4-53-51-PM.jpg" alt="Profile Photo" class="profile-picture">
+                </h2>
+                
+                <div class="profile-section">
+                    <div class="profile-info">
+                        <div class="info-item">
+                            <span class="info-label">Name</span>
+                            <span class="info-value">Muhammad Maaz Amjad</span>
+                        </div>
+                        
+                        <div class="info-item">
+                            <span class="info-label">Date of birth</span>
+                            <span class="info-value">Sep 15, 2002</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Nationality</span>
+                        <span class="info-value">Pakistani</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Visa Type</span>
+                        <span class="info-value">F1 Student</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">SEVIS ID</span>
+                        <span class="info-value">N375389724</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">School</span>
+                        <span class="info-value">Warrington College of Business, Florida</span>
+                    </div>
+                </div>
+                
+                <div class="validity-container">
+                    <div class="validity-box">
+                        <span class="validity-label">Valid from</span>
+                        <span class="validity-date">May 15, 2025</span>
+                    </div>
+                    <div class="validity-box">
+                        <span class="validity-label">Valid until</span>
+                        <span class="validity-date">May 15, 2028</span>
+                    </div>
+                </div>
+                
+                <div class="share-code-section">
+                    <h3 style="margin-bottom: 10px;">Prove Your Status</h3>
+                    <p style="font-size: 14px; margin-bottom: 10px;">Share your visa status with employers, schools, or others using a secure share code.</p>
+                    <a href="#" class="button"><i class="fas fa-share-square"></i> Get a Share Code</a>
+                </div>
+            </div>
+            
+            <div class="status-card">
+                <h2 class="status-header">Quick Actions</h2>
+                <div class="seal">
+                    <i class="fas fa-shield-alt" style="font-size: 50px; color: #002868;"></i>
+                </div>
+                <div style="margin: 15px 0;">
+                    <a href="#" class="button" style="margin: 8px 0;">
+                        <i class="fas fa-file-alt"></i> View I-20
+                    </a>
+                    <a href="#" class="button button-secondary" style="margin: 8px 0;">
+                        <i class="fas fa-sync-alt"></i> Update Details
+                    </a>
+                    <a href="#" class="button button-secondary" style="margin: 8px 0;">
+                        <i class="fas fa-print"></i> Print Status
+                    </a>
+                </div>
+                
+                <div class="alert-banner" style="margin-top: 15px;">
+                    <i class="fas fa-info-circle alert-icon" style="color: #0072bc;"></i>
+                    <div style="font-size: 14px;">Keep your personal information up to date to maintain your visa status.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tab-container">
+            <div class="tabs">
+                <div class="tab active" onclick="openTab(event, 'rights')">Your Rights</div>
+                <div class="tab" onclick="openTab(event, 'restrictions')">Restrictions</div>
+                <div class="tab" onclick="openTab(event, 'employment')">Employment</div>
+                <div class="tab" onclick="openTab(event, 'travel')">Travel</div>
+            </div>
+            
+            <div id="rights" class="tab-content active">
+                <div class="content-section">
+                    <h2 class="section-title">What You Can Do on an F1 Visa</h2>
+                    <ul>
+                        <li>Live in the U.S. while pursuing a full-time academic program</li>
+                        <li>Work on-campus up to 20 hours per week during academic terms</li>
+                        <li>Work full-time during official school breaks and summer vacation</li>
+                        <li>Participate in Curricular Practical Training (CPT) related to your field of study</li>
+                        <li>Apply for Optional Practical Training (OPT) after completing your studies</li>
+                        <li>Transfer to another SEVP-approved school</li>
+                        <li>Travel in and out of the U.S. with proper documentation</li>
+                        <li>Obtain a driver's license in your state of residence (varies by state)</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="restrictions" class="tab-content">
+                <div class="content-section">
+                    <h2 class="section-title">F1 Visa Restrictions</h2>
+                    <ul>
+                        <li>Cannot work off-campus without authorization</li>
+                        <li>Cannot participate in unauthorized employment</li>
+                        <li>Must maintain a full course of study each academic term</li>
+                        <li>Cannot receive federal public assistance</li>
+                        <li>Must maintain a valid passport from your home country</li>
+                        <li>Must depart the U.S. within 60 days of program completion (unless transferring or changing status)</li>
+                        <li>Cannot study at public elementary schools or adult education programs</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div id="employment" class="tab-content">
+                <div class="content-section">
+                    <h2 class="section-title">Employment Information</h2>
+                    <p style="margin-bottom: 15px; font-size: 14px;">As an F1 student, you are limited in the types of employment you may engage in:</p>
+                    
+                    <div class="subsection">
+                        <h3 class="subsection-title">On-Campus Employment</h3>
+                        <p style="font-size: 14px;">You may work up to 20 hours per week while school is in session and full-time during breaks.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3 class="subsection-title">Curricular Practical Training (CPT)</h3>
+                        <p style="font-size: 14px;">CPT must be an integral part of your established curriculum and directly related to your major field of study.</p>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3 class="subsection-title">Optional Practical Training (OPT)</h3>
+                        <p style="font-size: 14px;">You may apply for up to 12 months of OPT authorization upon completion of your academic program.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="travel" class="tab-content">
+                <div class="content-section">
+                    <h2 class="section-title">Travel Information</h2>
+                    <p style="margin-bottom: 15px; font-size: 14px;">When traveling outside the U.S., you will need the following documents to re-enter:</p>
+                    <ul>
+                        <li>A valid passport (valid for at least 6 months beyond your date of entry)</li>
+                        <li>A valid F1 visa stamp (unless traveling to Canada, Mexico, or adjacent islands for less than 30 days)</li>
+                        <li>A valid Form I-20 with a travel endorsement from your DSO (less than 1 year old)</li>
+                        <li>Financial evidence showing proof of necessary funds</li>
+                        <li>Your most recent transcript and proof of enrollment</li>
+                    </ul>
+                    
+                    <div class="alert-banner">
+                        <i class="fas fa-exclamation-triangle alert-icon"></i>
+                        <div style="font-size: 14px;">If your visa has expired, you will need to renew it at a U.S. embassy or consulate before returning to the U.S.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">Maintaining Your Status</h2>
+            <p style="margin-bottom: 15px; font-size: 14px;">To maintain your F1 status, you must:</p>
+            <ul>
+                <li>Attend the school you are authorized to attend</li>
+                <li>Maintain a full course of study each academic term</li>
+                <li>Make normal progress toward completing your course of study</li>
+                <li>Keep your passport valid at all times</li>
+                <li>Follow proper procedures for transferring, extending, or changing your education level</li>
+                <li>Limit on-campus employment to 20 hours per week while school is in session</li>
+                <li>Update your residential address within 10 days of moving</li>
+            </ul>
+            
+            <div class="subsection">
+                <h3 class="subsection-title">Social Security Number</h3>
+                <p style="font-size: 14px;">If you plan to work in the U.S., you will need a Social Security Number (SSN). You can apply for an SSN at a Social Security Administration office after securing employment.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Use</a>
+                <a href="#" class="footer-link">Accessibility</a>
+                <a href="#" class="footer-link">Contact Us</a>
+                <a href="#" class="footer-link">Help Center</a>
+                <a href="#" class="footer-link">Site Map</a>
+            </div>
+            <div class="footer-disclaimer">
+                <p>This site is managed by the U.S. Department of Homeland Security.</p>
+                <p>All content is available under the Open Government License v3.0, except where otherwise stated.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            // Hide all tab content
+            var tabcontent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            
+            // Remove active class from all tabs
+            var tabs = document.getElementsByClassName("tab");
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            // Show the specific tab content and add active class to the button
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Simple JavaScript to demonstrate functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to buttons
+            const buttons = document.querySelectorAll('.button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const buttonText = this.textContent.trim();
+                    
+                    if (buttonText.includes('Get a Share Code')) {
+                        alert('Share code functionality would generate a unique code to share your status.');
+                    } else if (buttonText.includes('View I-20')) {
+                        alert('This would display your I-20 document.');
+                    } else if (buttonText.includes('Update Details')) {
+                        alert('This would open a form to update your personal information.');
+                    } else if (buttonText.includes('Print Status')) {
+                        window.print();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
